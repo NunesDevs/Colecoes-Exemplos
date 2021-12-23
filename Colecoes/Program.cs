@@ -13,20 +13,20 @@ switch (Console.ReadLine()){
             arrayInteiros[0] = 10;
             arrayInteiros[1] = 20;
             arrayInteiros[2] = 30;
-            System.Console.WriteLine("for");
+            System.Console.WriteLine("Utilizando for: ");
         
         for (int i = 0; i < arrayInteiros.Length; i++)
         {
             System.Console.WriteLine(arrayInteiros[i]);
         }
 
-            System.Console.WriteLine("foreach");
+            System.Console.WriteLine("Utilizando foreach:");
         
         foreach (int item in arrayInteiros)
         {
             System.Console.WriteLine(item);
         }
-    break;
+    goto Inicio;
 
     case "Matriz":
         int[,] matriz = new int[4,2]{
@@ -51,7 +51,7 @@ switch (Console.ReadLine()){
                 System.Console.WriteLine(matriz[i,f]);
             }
         }
-    break;
+    goto Inicio;
 
     case "Ordenar":
         int[] array = new int[6] {6,3,8,100,23,9};
@@ -72,7 +72,7 @@ switch (Console.ReadLine()){
         {
             System.Console.WriteLine("Invalido.");
         }
-    break;
+    goto Inicio;
 
     case "Sort":
         int[] array1 = new int[6] {6,3,8,100,23,9};
@@ -93,7 +93,7 @@ switch (Console.ReadLine()){
         {
             System.Console.WriteLine("Invalido.");
         }
-    break;
+    goto Inicio;
 
     case "Copiar":
         int[] array2 = new int[6] {6,3,8,100,23,9};
@@ -121,7 +121,7 @@ switch (Console.ReadLine()){
         {
             System.Console.WriteLine("Invalido.");
         }
-    break;
+    goto Inicio;
 
     case "Existe":
         int[] array3 = new int[20] {6,3,8,100,23,9,12,33,45,17,66,54,31,67,53,234,56,432,45,567};
@@ -132,13 +132,13 @@ switch (Console.ReadLine()){
         
         if (existe)
         {
-            System.Console.WriteLine("Valor encontrado" , valorProcurado);
+            System.Console.WriteLine("Valor encontrado: " , valorProcurado);
         } else 
         {
             System.Console.WriteLine("Não encontrado");
         }
 
-    break;
+    goto Inicio;
 
     case "Lista":
         OpLista OpL1 = new OpLista(); 
@@ -159,7 +159,7 @@ switch (Console.ReadLine()){
         System.Console.WriteLine("Lendo elementos...");
     
         OpL1.ImprimirLista1(Lista1);
-    break;
+    goto Inicio;
 
     case "Remover":
         OpLista OpL2 = new OpLista(); 
@@ -177,7 +177,7 @@ switch (Console.ReadLine()){
 
         System.Console.WriteLine($"Qantidade de elementos na lista: {Lista2.Count}" );
 
-        System.Console.WriteLine("Lendo elementos...");
+        System.Console.WriteLine("Lendo elementos... ");
     
         OpL2.ImprimirLista1(Lista2);
         System.Console.WriteLine("Deseja remover elemento? S ou enter para continuar");
@@ -189,7 +189,7 @@ switch (Console.ReadLine()){
         Lista2.Remove(r);
         }
         System.Console.WriteLine("Encerrando.");
-    break;
+    goto Inicio;
 
     case "Adicionar":
         OpLista OpL3 = new OpLista(); 
@@ -213,7 +213,7 @@ switch (Console.ReadLine()){
 
         string[] novosElementos = new string[2] {ne1 , ne2};
 
-        System.Console.WriteLine($"Qantidade de elementos na lista: {Lista3.Count}" );
+        System.Console.WriteLine($"Quantidade de elementos na lista: {Lista3.Count}" );
 
         System.Console.WriteLine("Lendo elementos...");
     
@@ -228,7 +228,7 @@ switch (Console.ReadLine()){
             OpL3.ImprimirLista1(Lista3);
         }
         System.Console.WriteLine("Encerrando.");
-    break;
+    goto Inicio;
     
     case "Fila":
         Queue<string> fila1 = new Queue<string>();
@@ -249,14 +249,14 @@ switch (Console.ReadLine()){
         fila1.Enqueue(el3);
         fila1.Enqueue(el4);
 
-        System.Console.WriteLine($"Itens na fila {fila1.Count()}");
+        System.Console.WriteLine($"Itens na fila: {fila1.Count()}");
         while (fila1.Count > 0)
         {
             System.Console.WriteLine($"Item de sua fila: {fila1.Peek()}");
             System.Console.WriteLine($"{fila1.Dequeue()} Pronto.");
         }
-        System.Console.WriteLine($"Itens na fila {fila1.Count}");
-    break;
+        System.Console.WriteLine($"Itens na fila: {fila1.Count}");
+    goto Inicio;
 
     case "Pilha":
         Stack<string> pilha1 = new Stack<string>();
@@ -283,42 +283,42 @@ switch (Console.ReadLine()){
         pilha1.Push(pl4);
         pilha1.Push(pl5);
 
-        System.Console.WriteLine($"Itens na pilha {pilha1.Count}");
+        System.Console.WriteLine($"Itens na pilha: {pilha1.Count}");
 
         while (pilha1.Count > 0)
         {
-            System.Console.WriteLine($"Proximo item {pilha1.Peek()}");
+            System.Console.WriteLine($"Proximo item: {pilha1.Peek()}");
             System.Console.WriteLine($"Pronto {pilha1.Pop()}");    
         }
-            System.Console.WriteLine($"Itens na pilha {pilha1.Count}");
-    break;
+            System.Console.WriteLine($"Itens na pilha: {pilha1.Count}");
+    goto Inicio;
 
     case "Dicionario":
         Dictionary<string, string> dicionarioItem = new Dictionary<string, string>();
 
         System.Console.WriteLine("Digite uma chave.");
             var key1 = Console.ReadLine();
-                System.Console.WriteLine("Digite o conteudo dela>.");
+                System.Console.WriteLine("Digite o conteudo dela.");
                     var conteudo1 = Console.ReadLine();
 
         System.Console.WriteLine("Digite uma chave.");    
             var key2 = Console.ReadLine();
-                System.Console.WriteLine("Digite o conteudo dela>.");
+                System.Console.WriteLine("Digite o conteudo dela.");
                     var conteudo2 = Console.ReadLine();
         
         System.Console.WriteLine("Digite uma chave.");
             var key3 = Console.ReadLine();
-                System.Console.WriteLine("Digite o conteudo dela>.");
+                System.Console.WriteLine("Digite o conteudo dela.");
                     var conteudo3 = Console.ReadLine();
         
         System.Console.WriteLine("Digite uma chave.");
             var key4 = Console.ReadLine();
-                System.Console.WriteLine("Digite o conteudo dela>.");
+                System.Console.WriteLine("Digite o conteudo dela.");
                     var conteudo4 = Console.ReadLine();
         
         System.Console.WriteLine("Digite uma chave.");
             var key5 = Console.ReadLine();
-                System.Console.WriteLine("Digite o conteudo dela>.");
+                System.Console.WriteLine("Digite o conteudo dela.");
                     var conteudo5 = Console.ReadLine();
 
         dicionarioItem.Add(key1, conteudo1);
@@ -328,7 +328,7 @@ switch (Console.ReadLine()){
         dicionarioItem.Add(key5, conteudo5);
         
         menu:
-        System.Console.WriteLine(" 1 - dicionario\n 2 - acessar valor\n 3 - atualizar valor\n 4 - Remover valor");
+        System.Console.WriteLine(" 1 - Indice\n 2 - Acessar valor\n 3 - Atualizar valor\n 4 - Remover valor");
         var option = int.Parse(Console.ReadLine());
 
         if (option == 1)
@@ -380,7 +380,7 @@ switch (Console.ReadLine()){
         {
             System.Console.WriteLine("Invalido.");
         }
-    break;
+    goto Inicio;
 
     case "Consulta":
         System.Console.WriteLine("Criando um array, entre com 5 valores.");
@@ -432,12 +432,12 @@ switch (Console.ReadLine()){
         } else {
             System.Console.WriteLine("Invalido");
         }
-    break;
+    goto Inicio;
 
     case "Sair":
         System.Console.WriteLine("Obrigado por testar meu código!!");
         Environment.Exit(0);
-    break;
+    goto Inicio;
 
     default:
 
