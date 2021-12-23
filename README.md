@@ -10,6 +10,6 @@
 <p> VsCode</p>
 </a>
 
-## Para rodar entre na pasta ExemploPOO e pelo terminal digite:
+## Para rodar entre na pasta Colecoes e pelo terminal digite:
 
 dotnet run
