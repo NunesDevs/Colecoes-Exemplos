@@ -1,15 +1,42 @@
-# Exemplos práticos em C#
+# Colecoes-Exemplos
 
-## requisitos:
+Exemplos interativos de arrays, listas, filas, pilhas e dicionários em uma aplicação de console C#.
 
-<a href = "https://dotnet.microsoft.com/en-us/download">
-<p> .net</p>
-</a>
+## Funcionalidades verificadas
 
-<a href = "https://code.visualstudio.com/">
-<p> VsCode</p>
-</a>
+- Manipulação de arrays.
+- Listas e ordenação.
+- Filas e pilhas.
+- Dicionários.
 
-## Para rodar entre na pasta Colecoes e pelo terminal digite:
+## Operação e arquitetura verificadas
 
-dotnet run
+Colecoes/Program.cs conduz o menu; classes OpArrays e OpLista reúnem operações de apoio. Sem banco ou backend HTTP.
+
+Arquivos principais: `Colecoes/Program.cs`, `Colecoes/helper/OpArrays.cs`, `Colecoes/helper/OpLista.cs`.
+
+### Requisitos e execução
+
+SDK .NET compatível com Colecoes/Colecoes.csproj.
+
+```text
+dotnet build Colecoes.sln
+dotnet run --project Colecoes/Colecoes.csproj
+```
+
+
+
+### Testes e estado
+
+Não foi identificada uma suíte automatizada específica para os fluxos descritos; valide a execução e os casos de borda antes de publicar.
+
+Estado: projeto de estudo/experimental. Deploy ativo não foi confirmado nesta revisão.
+
+### Limitações conhecidas
+
+- Exercícios interativos sem suíte automatizada.
+- Entradas de console exigem valores compatíveis com cada opção.
+
+### Licença e manutenção
+
+Nenhum arquivo de licença foi identificado nesta revisão; não foi adicionada uma nova licença. Atualize comandos e limitações quando houver mudança de comportamento.
