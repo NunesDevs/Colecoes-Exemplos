@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using Colecoes.helper;
 using System;
@@ -6,22 +6,23 @@ using System;
 Inicio:
 Console.WriteLine("############################################\n# Atividades sobre orientação a obj com C# #\n############################################\nMenu:\n  - Array \n  - Matriz \n  - Ordenar \n  - Sort \n  - Copiar \n  - Existe \n  - Lista \n  - Remover\n  - Adicionar \n  - Fila\n  - Pilha \n  - Dicionario \n  - Consulta \n  - Sair: Encerra programa.");
 
-
-switch (Console.ReadLine()){
+try
+{
+switch (Entrada.Texto()){
     case "Array":
         int[] arrayInteiros = new int[3];
             arrayInteiros[0] = 10;
             arrayInteiros[1] = 20;
             arrayInteiros[2] = 30;
             System.Console.WriteLine("Utilizando for: ");
-        
+
         for (int i = 0; i < arrayInteiros.Length; i++)
         {
             System.Console.WriteLine(arrayInteiros[i]);
         }
 
             System.Console.WriteLine("Utilizando foreach:");
-        
+
         foreach (int item in arrayInteiros)
         {
             System.Console.WriteLine(item);
@@ -57,8 +58,8 @@ switch (Console.ReadLine()){
         int[] array = new int[6] {6,3,8,100,23,9};
         OpArrays op = new OpArrays();
         System.Console.WriteLine("Escolha: \n 1 - Ordenado\n 2 - Original");
-            var opc = int.Parse(Console.ReadLine());
-        
+            var opc = Entrada.Inteiro();
+
         if (opc == 2)
         {
             System.Console.WriteLine("Array padrão, sem utilizar ordenador de lista.");
@@ -68,7 +69,7 @@ switch (Console.ReadLine()){
             System.Console.WriteLine("Array ordenado.");
             op.OrdenarBubbleSort(ref array);
             op.ImprimirArray(array);
-        } else 
+        } else
         {
             System.Console.WriteLine("Invalido.");
         }
@@ -78,8 +79,8 @@ switch (Console.ReadLine()){
         int[] array1 = new int[6] {6,3,8,100,23,9};
         OpArrays op1 = new OpArrays();
         System.Console.WriteLine("Escolha: \n 1 - Ordenado\n 2 - Original");
-            var opc1 = int.Parse(Console.ReadLine());
-        
+            var opc1 = Entrada.Inteiro();
+
         if  (opc1 == 2)
         {
             System.Console.WriteLine("Array padrão, sem utilizar ordenador de lista.");
@@ -89,7 +90,7 @@ switch (Console.ReadLine()){
             System.Console.WriteLine("Array ordenado.");
             op1.Ordenar1(ref array1);
             op1.ImprimirArray1(array1);
-        } else 
+        } else
         {
             System.Console.WriteLine("Invalido.");
         }
@@ -100,8 +101,8 @@ switch (Console.ReadLine()){
         int[] arraycopia = new int[10];
         OpArrays op2 = new OpArrays();
         System.Console.WriteLine("Escolha: \n 1 - Ordenado\n 2 - Original\n 3 - Copiar");
-            var opc2 = int.Parse(Console.ReadLine());
-        
+            var opc2 = Entrada.Inteiro();
+
         if (opc2 == 2)
         {
             System.Console.WriteLine("Array padrão, sem utilizar ordenador de lista.");
@@ -126,14 +127,14 @@ switch (Console.ReadLine()){
     case "Existe":
         int[] array3 = new int[20] {6,3,8,100,23,9,12,33,45,17,66,54,31,67,53,234,56,432,45,567};
         System.Console.WriteLine("Qual valor procura?");
-            var valorProcurado = int.Parse(Console.ReadLine());
+            var valorProcurado = Entrada.Inteiro();
         OpArrays op3 = new OpArrays();
         bool existe = op3.Existe(array3, valorProcurado);
-        
+
         if (existe)
         {
-            System.Console.WriteLine("Valor encontrado: " , valorProcurado);
-        } else 
+            System.Console.WriteLine("Valor encontrado: {0}" , valorProcurado);
+        } else
         {
             System.Console.WriteLine("Não encontrado");
         }
@@ -141,15 +142,15 @@ switch (Console.ReadLine()){
     goto Inicio;
 
     case "Lista":
-        OpLista OpL1 = new OpLista(); 
+        OpLista OpL1 = new OpLista();
         List<string> Lista1 = new List<string>();
         System.Console.WriteLine("Primeiro valor:");
-            string p = Console.ReadLine();
+            string p = Entrada.Texto();
         System.Console.WriteLine("Segundo valor: ");
-            string s = Console.ReadLine();
+            string s = Entrada.Texto();
         System.Console.WriteLine("Terceiro valor: ");
-            string t = Console.ReadLine();    
-        
+            string t = Entrada.Texto();
+
         Lista1.Add(p);
         Lista1.Add(s);
         Lista1.Add(t);
@@ -157,20 +158,20 @@ switch (Console.ReadLine()){
         System.Console.WriteLine($"Qantidade de elementos na lista: {Lista1.Count}" );
 
         System.Console.WriteLine("Lendo elementos...");
-    
+
         OpL1.ImprimirLista1(Lista1);
     goto Inicio;
 
     case "Remover":
-        OpLista OpL2 = new OpLista(); 
+        OpLista OpL2 = new OpLista();
         List<string> Lista2 = new List<string>();
         System.Console.WriteLine("Primeiro valor:");
-            string p1 = Console.ReadLine();
+            string p1 = Entrada.Texto();
         System.Console.WriteLine("Segundo valor: ");
-            string s1 = Console.ReadLine();
+            string s1 = Entrada.Texto();
         System.Console.WriteLine("Terceiro valor: ");
-            string t1 = Console.ReadLine();    
-        
+            string t1 = Entrada.Texto();
+
         Lista2.Add(p1);
         Lista2.Add(s1);
         Lista2.Add(t1);
@@ -178,50 +179,50 @@ switch (Console.ReadLine()){
         System.Console.WriteLine($"Qantidade de elementos na lista: {Lista2.Count}" );
 
         System.Console.WriteLine("Lendo elementos... ");
-    
+
         OpL2.ImprimirLista1(Lista2);
         System.Console.WriteLine("Deseja remover elemento? S ou enter para continuar");
-        var rm = Console.ReadLine();
+        var rm = Entrada.Texto();
         if (rm == "S")
         {
             System.Console.WriteLine("Digite o item de sua lista a ser removido.");
-                var r = Console.ReadLine();
+                var r = Entrada.Texto();
         Lista2.Remove(r);
         }
         System.Console.WriteLine("Encerrando.");
     goto Inicio;
 
     case "Adicionar":
-        OpLista OpL3 = new OpLista(); 
+        OpLista OpL3 = new OpLista();
         List<string> Lista3 = new List<string>();
         System.Console.WriteLine("Primeiro valor:");
-            string p2 = Console.ReadLine();
+            string p2 = Entrada.Texto();
         System.Console.WriteLine("Segundo valor: ");
-            string s2 = Console.ReadLine();
+            string s2 = Entrada.Texto();
         System.Console.WriteLine("Terceiro valor: ");
-            string t2 = Console.ReadLine();    
-        
+            string t2 = Entrada.Texto();
+
         Lista3.Add(p2);
         Lista3.Add(s2);
         Lista3.Add(t2);
 
         System.Console.WriteLine("Digite outros dois valores:");
             System.Console.WriteLine("Primeiro");
-                var ne1 = Console.ReadLine();
+                var ne1 = Entrada.Texto();
             System.Console.WriteLine("Segundo");
-                var ne2 = Console.ReadLine();
+                var ne2 = Entrada.Texto();
 
         string[] novosElementos = new string[2] {ne1 , ne2};
 
         System.Console.WriteLine($"Quantidade de elementos na lista: {Lista3.Count}" );
 
         System.Console.WriteLine("Lendo elementos...");
-    
+
         OpL3.ImprimirLista1(Lista3);
 
         System.Console.WriteLine("Deseja adicionar os outros dois valores? S para sim enter para encerrar.");
-            var esc = Console.ReadLine();
-        
+            var esc = Entrada.Texto();
+
         if (esc == "S")
         {
             Lista3.AddRange(novosElementos);
@@ -229,20 +230,20 @@ switch (Console.ReadLine()){
         }
         System.Console.WriteLine("Encerrando.");
     goto Inicio;
-    
+
     case "Fila":
         Queue<string> fila1 = new Queue<string>();
 
         System.Console.WriteLine("Entre com um item para a fila:");
-            var el1 = Console.ReadLine();
+            var el1 = Entrada.Texto();
         System.Console.WriteLine("Entre com mais um item para a fila:");
-            var el2 = Console.ReadLine();
+            var el2 = Entrada.Texto();
 
         System.Console.WriteLine("Entre com mais um item para a fila:");
-            var el3 = Console.ReadLine();
+            var el3 = Entrada.Texto();
 
         System.Console.WriteLine("Entre com mais um item para a fila:");
-            var el4 = Console.ReadLine();
+            var el4 = Entrada.Texto();
 
         fila1.Enqueue(el1);
         fila1.Enqueue(el2);
@@ -262,21 +263,20 @@ switch (Console.ReadLine()){
         Stack<string> pilha1 = new Stack<string>();
 
         System.Console.WriteLine("Entre com o primeiro item da pilha.");
-            var pl1 = Console.ReadLine();
+            var pl1 = Entrada.Texto();
 
         System.Console.WriteLine("Entre com o segundo item da pilha.");
-            var pl2 = Console.ReadLine();
+            var pl2 = Entrada.Texto();
 
         System.Console.WriteLine("Entre com o terceiro item da pilha.");
-            var pl3 = Console.ReadLine();
+            var pl3 = Entrada.Texto();
 
         System.Console.WriteLine("Entre com o quarto item da pilha.");
-            var pl4 = Console.ReadLine();
+            var pl4 = Entrada.Texto();
 
         System.Console.WriteLine("Entre com o quinto item da pilha.");
-            var pl5 = Console.ReadLine();
+            var pl5 = Entrada.Texto();
 
-        
         pilha1.Push(pl1);
         pilha1.Push(pl2);
         pilha1.Push(pl3);
@@ -288,7 +288,7 @@ switch (Console.ReadLine()){
         while (pilha1.Count > 0)
         {
             System.Console.WriteLine($"Proximo item: {pilha1.Peek()}");
-            System.Console.WriteLine($"Pronto {pilha1.Pop()}");    
+            System.Console.WriteLine($"Pronto {pilha1.Pop()}");
         }
             System.Console.WriteLine($"Itens na pilha: {pilha1.Count}");
     goto Inicio;
@@ -297,62 +297,63 @@ switch (Console.ReadLine()){
         Dictionary<string, string> dicionarioItem = new Dictionary<string, string>();
 
         System.Console.WriteLine("Digite uma chave.");
-            var key1 = Console.ReadLine();
+            var key1 = Entrada.Texto();
                 System.Console.WriteLine("Digite o conteudo dela.");
-                    var conteudo1 = Console.ReadLine();
+                    var conteudo1 = Entrada.Texto();
 
-        System.Console.WriteLine("Digite uma chave.");    
-            var key2 = Console.ReadLine();
-                System.Console.WriteLine("Digite o conteudo dela.");
-                    var conteudo2 = Console.ReadLine();
-        
         System.Console.WriteLine("Digite uma chave.");
-            var key3 = Console.ReadLine();
+            var key2 = Entrada.Texto();
                 System.Console.WriteLine("Digite o conteudo dela.");
-                    var conteudo3 = Console.ReadLine();
-        
+                    var conteudo2 = Entrada.Texto();
+
         System.Console.WriteLine("Digite uma chave.");
-            var key4 = Console.ReadLine();
+            var key3 = Entrada.Texto();
                 System.Console.WriteLine("Digite o conteudo dela.");
-                    var conteudo4 = Console.ReadLine();
-        
+                    var conteudo3 = Entrada.Texto();
+
         System.Console.WriteLine("Digite uma chave.");
-            var key5 = Console.ReadLine();
+            var key4 = Entrada.Texto();
                 System.Console.WriteLine("Digite o conteudo dela.");
-                    var conteudo5 = Console.ReadLine();
+                    var conteudo4 = Entrada.Texto();
+
+        System.Console.WriteLine("Digite uma chave.");
+            var key5 = Entrada.Texto();
+                System.Console.WriteLine("Digite o conteudo dela.");
+                    var conteudo5 = Entrada.Texto();
 
         dicionarioItem.Add(key1, conteudo1);
         dicionarioItem.Add(key2, conteudo2);
         dicionarioItem.Add(key3, conteudo3);
         dicionarioItem.Add(key4, conteudo4);
         dicionarioItem.Add(key5, conteudo5);
-        
+
         menu:
-        System.Console.WriteLine(" 1 - Indice\n 2 - Acessar valor\n 3 - Atualizar valor\n 4 - Remover valor");
-        var option = int.Parse(Console.ReadLine());
+        System.Console.WriteLine(" 0 - Voltar\n 1 - Indice\n 2 - Acessar valor\n 3 - Atualizar valor\n 4 - Remover valor");
+        var option = Entrada.Inteiro();
+        if (option == 0) goto Inicio;
 
         if (option == 1)
         {
             foreach (KeyValuePair<string, string> item in dicionarioItem)
             {
                 System.Console.WriteLine($"Chave: {item.Key}, valor: {item.Value}");
-                
+
             } goto menu;
         } else if (option == 2)
         {
             System.Console.WriteLine("Entre com a chave: ");
-            string valorProcur = Console.ReadLine();
+            string valorProcur = Entrada.Texto();
             System.Console.WriteLine(dicionarioItem[valorProcur]);
             goto menu;
         } else if (option == 3)
         {
             System.Console.WriteLine("Entre com a chave: ");
-                string valorProcura = Console.ReadLine();
+                string valorProcura = Entrada.Texto();
             System.Console.WriteLine("Valor original: ");
             System.Console.WriteLine(dicionarioItem[valorProcura]);
-            
+
             System.Console.WriteLine("Qua valor deseja colocar no lugar? ");
-                string novoValor = Console.ReadLine();
+                string novoValor = Entrada.Texto();
             dicionarioItem[valorProcura] = novoValor;
             System.Console.WriteLine("Valor atualizado: ");
             System.Console.WriteLine(dicionarioItem[valorProcura]);
@@ -362,11 +363,11 @@ switch (Console.ReadLine()){
             foreach (KeyValuePair<string, string> item in dicionarioItem)
             {
                 System.Console.WriteLine($"Chave: {item.Key}, valor: {item.Value}");
-                
-            } 
+
+            }
 
             System.Console.WriteLine("Qual valor deseja remover? ");
-                string valorRemove = Console.ReadLine();
+                string valorRemove = Entrada.Texto();
 
             System.Console.WriteLine($"Removendo o valor {valorRemove}");
             dicionarioItem.Remove(valorRemove);
@@ -374,9 +375,9 @@ switch (Console.ReadLine()){
             foreach (KeyValuePair<string, string> item in dicionarioItem)
             {
                 System.Console.WriteLine($"Chave: {item.Key}, valor: {item.Value}");
-                
+
             } goto menu;
-        } else 
+        } else
         {
             System.Console.WriteLine("Invalido.");
         }
@@ -386,31 +387,30 @@ switch (Console.ReadLine()){
         System.Console.WriteLine("Criando um array, entre com 5 valores.");
 
         System.Console.WriteLine("Valor 1:");
-            var a = int.Parse(Console.ReadLine());
-            
+            var a = Entrada.Inteiro();
+
         System.Console.WriteLine("Valor 2:");
-            var b = int.Parse(Console.ReadLine());
-            
+            var b = Entrada.Inteiro();
+
         System.Console.WriteLine("Valor 3:");
-            var c = int.Parse(Console.ReadLine());
-            
+            var c = Entrada.Inteiro();
+
         System.Console.WriteLine("Valor 4:");
-            var d = int.Parse(Console.ReadLine());
-            
+            var d = Entrada.Inteiro();
+
         System.Console.WriteLine("Valor 5:");
-            var e = int.Parse(Console.ReadLine());
-            
+            var e = Entrada.Inteiro();
 
         int[] arrayNumeros = new int[5] {a, b, c, d, e};
 
-
         System.Console.WriteLine("Consulta numeros pares.");
         consumenu:
-        System.Console.WriteLine(" 1 - Obter valores\n 2 - Ordenar\n 3 - Valores minimos, máximos e médios");
-        var consu = int.Parse(Console.ReadLine());
+        System.Console.WriteLine(" 0 - Voltar\n 1 - Obter valores\n 2 - Ordenar\n 3 - Valores minimos, máximos e médios");
+        var consu = Entrada.Inteiro();
+        if (consu == 0) goto Inicio;
         if (consu == 1)
         {
-            var numerosPares = 
+            var numerosPares =
                 from num in arrayNumeros
                 where num % 2 == 0
                 select num;
@@ -443,5 +443,13 @@ switch (Console.ReadLine()){
 
     System.Console.WriteLine("Menu invalido, tente novamente.");
 
+    goto Inicio;
+}
+
+}
+catch (System.IO.EndOfStreamException) { return; }
+catch (Exception error) when (error is ArgumentException || error is System.IO.IOException || error is UnauthorizedAccessException || error is OverflowException || error is DivideByZeroException || error is System.Collections.Generic.KeyNotFoundException)
+{
+    Console.WriteLine("Operação não concluída: " + error.Message);
     goto Inicio;
 }
